@@ -49,6 +49,11 @@
             transition:
                 opacity 0.7s ease,
                 visibility 0.7s ease;
+
+            background-image: url(https://i.pinimg.com/736x/8d/4d/8c/8d4d8c621674afec6cb775138c315500.jpg);
+            background-repeat: no-repeat; /* May gitling na dapat dito */
+            background-size: cover;        /* Para sakop ang buong screen */
+            background-position: center;  /* Para laging nasa gitna ang focus ng pic */
         }
 
         .open-screen.hidden {
@@ -63,6 +68,8 @@
 
             text-shadow:
                 0 2px 10px rgba(0, 0, 0, 0.35);
+
+            transform: translateY(-60px);
         }
 
         .open-content h1 {
@@ -81,14 +88,12 @@
         ========================= */
 
         .container {
-            position: fixed;
-
-            top: 50%;
-            left: 50%;
-
-            transform: translate(-50%, -50%);
+            position: relative;
 
             width: min(700px, calc(100% - 30px));
+
+            margin: 0 auto;
+            padding: 40px 0 60px;
 
             display: flex;
             flex-direction: column;
@@ -110,7 +115,8 @@
             align-items: center;
             flex-direction: column;
 
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
 
             height: 0;
 
@@ -179,14 +185,35 @@
         ========================= */
 
         .ribbon-container {
+            position: absolute;
+
+            top: 58%;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
             display: flex;
 
             justify-content: center;
             align-items: center;
 
             flex-direction: column;
+        }
 
-            margin-top: 15px;
+        .hint {
+            margin-bottom: 8px;
+
+            color: white;
+
+            font-size: 12px;
+
+            text-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.4);
+
+            opacity: 0.9;
+
+            transition: opacity 0.3s ease;
         }
 
         #solid-ribbon {
